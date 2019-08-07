@@ -1,5 +1,7 @@
 package com.example.alxye.noughtscrosses;
 
+import java.util.Arrays;
+
 import static com.example.alxye.noughtscrosses.MainActivity.Tiles;
 
 public class Board {
@@ -46,5 +48,12 @@ public class Board {
     //Getter for the playing field
     public int[][] getField() {
         return field;
+    }
+
+    @Override
+    public String toString() {
+        return "Board{" + "\n" +
+                "field="  + "\n" + Arrays.toString(field[0]) + "\n" + Arrays.toString(field[1]) + "\n" + Arrays.toString(field[2]) +
+                '}';
     }
 }
