@@ -16,7 +16,6 @@ public class Board {
 
     //Checks if someone has won the game
     boolean gameWon() {
-
         //Checking horizontal rows
         int line = 0;
         for (int i = 0; i < 3; i++) {
@@ -37,6 +36,14 @@ public class Board {
             field[row][column] = ((tiles != Tiles.BLANK) && tiles == Tiles.CROSS) ? 1 : -1;
         else
             System.err.println("This tile is not blank");
+    }
+
+    void reset() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                field[i][j] = 0;
+            }
+        }
     }
 
 

@@ -7,6 +7,12 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    public void reset(View view) {
+        board.reset();
+        updateField();
+        currentTile = Tiles.CROSS;
+    }
+
     public enum Tiles {
         BLANK, NOUGHT, CROSS
     }
@@ -32,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClicked(View view) {
-
         //Checking which button was pressed
         switch(view.getId()) {
             case (R.id.button1):
@@ -65,13 +70,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Changing the images of the buttons
-        updateField(view);
+        updateField();
 
         //Switching the currently selected tile
         currentTile = (currentTile == Tiles.CROSS) ? Tiles.NOUGHT : Tiles.CROSS;
     }
 
-    private void updateField(View view) {
+    private void updateField() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 switch (board.getField()[i][j]) {
