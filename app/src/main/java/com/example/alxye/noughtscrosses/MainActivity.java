@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
     public enum Tiles {
@@ -90,6 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        System.out.println(board);
+        System.out.println(board.gameWon());
     }
 }
